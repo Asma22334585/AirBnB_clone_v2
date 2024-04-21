@@ -29,15 +29,15 @@ def python_is_cool(text='is cool'):
     return "Python {}".format(text.replace('_', ' '))
 
 
-@app.route("/number/<int:n>", strict_slashes=False)
-def intnumber(n):
-    """accept integer"""
-    return "{} is a number".format(n)
+@app.route('/number/<int:n>', strict_slashes=False)
+def numberN(n):
+    """ n is a number """
+    return f"{n} is a number"
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def number_template(n):
-    """display a HTML page only if n is integer"""
+def numberTemplate(n):
+    """ display a HTML page only if n is an integer"""
     return render_template('5-number.html', n=n)
 
 if __name__ == "__main__":
