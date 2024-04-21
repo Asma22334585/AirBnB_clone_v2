@@ -29,13 +29,10 @@ def python_is_cool(text='is cool'):
     return "Python {}".format(text.replace('_', ' '))
 
 
-@app.route('/number/<n>', strict_slashes=False)
-def number(n):
-    try:
-        n = int(n)
-        return "{} is a number".format(n)
-    except:
-        abort(404)
+@app.route('/number/<int:n>', strict_slashes=False)
+def numberN(n):
+    """ n is a number """
+    return f"{n} is a number"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000')
